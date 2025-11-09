@@ -1,0 +1,30 @@
+/* SETUP DE CORES - Baseado na imagem de divulgação */
+:root {
+    --primary-green: #A3FF00; /* Verde Vibrante / Néon para títulos e destaques */
+    --background-dark: #121212; /* Preto Escuro - Fundo */
+    --text-light: #FFFFFF; /* Branco - Textos, corpo, etc. */
+    --text-dark: #000000; /* Preto - Para texto sobre o fundo verde */
+    --font-main: 'Roboto', sans-serif; /* Fonte para o projeto */
+}
+
+/* Reset Básico e Fundo Principal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    min-height: 100vh; /* Garante que o fundo cubra toda a tela */
+}
+
+/* Estilo para Container Centralizado (Opcional, mas recomendado) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
