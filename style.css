@@ -14,13 +14,51 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* --- FUNDO PERSONALIZADO COM IMAGEM (assets/images/background_.jpg) --- */
 
 body {
-    background-color: var(--background-dark);
+    background-color: var(--background-dark); /* GARANTE QUE A COR DE FUNDO PADRÃO SEJA ESCURA */
     color: var(--text-light);
     font-family: var(--font-main);
     line-height: 1.6;
     min-height: 100vh;
+    
+    /* Remove qualquer background-image diretamente no body, se houver */
+    background-image: none; 
+
+    /* Essencial para que o pseudo-elemento com z-index negativo funcione corretamente */
+    position: relative; 
+    z-index: 0; 
+}
+
+/* O Pseudo-Elemento cria uma camada de background por trás de todo o conteúdo */
+body::before {
+    content: ''; /* Essencial para pseudo-elementos */
+    position: fixed; /* Fixa o background para não rolar com o conteúdo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Caminho para a sua imagem */
+    background-image: url('assets/images/background.jpg'); 
+    background-repeat: no-repeat; /* Para uma imagem que deve cobrir toda a tela */
+    background-size: cover; /* Cobre toda a área, mantendo proporção */
+    background-position: center center; /* Centraliza a imagem no fundo */
+    
+    /* Remova background-color daqui, o body já tem. Use um overlay se precisar. */
+    /* NÃO USE OPACITY AQUI SE A IMAGEM JÁ É ESCURA E COM DETALHES CLAROS.
+       Em vez disso, use um background-blend-mode ou um overlay. */
+
+    /* A MELHOR ABORDAGEM PARA ESTA IMAGEM ESPECÍFICA:
+       Misturar a imagem com o fundo preto usando blend-mode */
+    background-blend-mode: luminosity; /* Ou 'overlay', 'multiply', 'soft-light' */
+    
+    /* Se background-blend-mode não funcionar bem, use um OVERLAY DE COR preta com baixa opacidade
+       DIRETO NO PSEUDO-ELEMENTO, e não na imagem em si. */
+    background-color: rgba(0, 0, 0, 0.6); /* UM OVERLAY PRETO COM 60% DE OPACIDADE */
+
+    z-index: -1; /* Coloca este elemento ATRÁS de todo o conteúdo visível do body */
 }
 
 .container {
