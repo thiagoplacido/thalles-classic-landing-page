@@ -38,6 +38,21 @@ body {
     position: relative;
     overflow: hidden; /* Para garantir que a imagem de fundo fique no lugar */
 }
+.hero-content {
+    z-index: 10; /* Garante que o texto fique acima do vídeo */
+    position: relative; /* Opcional, mas ajuda a centralizar o texto */
+}
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1; /* Abaixo do overlay e do conteúdo */
+    transform: translate(-50%, -50%); /* Centraliza o vídeo no container */
+}
 
 #hero h1 {
     font-size: 4.5em; /* Título bem grande */
@@ -128,4 +143,180 @@ body {
 
 .coupon-cta-button:hover {
     background-color: #333;
+}
+/* SEÇÃO HISTÓRIA */
+#historia {
+    padding: 80px 20px;
+}
+
+#historia h2 {
+    font-size: 2.5em;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.historia-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    /* Layout responsivo - no mobile, vai empilhar (veremos isso no Passo 9) */
+}
+
+.historia-text {
+    flex: 1;
+    font-size: 1.1em;
+}
+
+.historia-image {
+    flex: 1;
+    text-align: right;
+}
+
+.historia-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Borda sutil verde néon pode ser um toque legal */
+    border: 2px solid var(--primary-green);
+    box-shadow: 0 0 20px rgba(163, 255, 0, 0.4); /* Brilho néon */
+}
+
+.destaque-valor {
+    margin: 25px 0;
+    padding: 15px;
+    background-color: #1F1F1F; /* Fundo levemente mais claro que o corpo */
+    border-left: 5px solid var(--primary-green);
+}
+
+/* Estilo para o botão Instagram, diferente do CTA principal */
+.instagram-button {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    padding: 10px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.instagram-button:hover {
+    background-color: var(--primary-green);
+    color: var(--text-dark);
+}
+/* SEÇÃO VÍDEOS */
+#videos {
+    padding: 40px 20px 80px;
+}
+
+#videos h2 {
+    font-size: 2em;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.video-grid {
+    display: grid;
+    /* Tenta 3 colunas de largura igual, mas permite que se ajustem */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-bottom: 40px;
+    justify-items: center; /* Centraliza os itens no grid */
+}
+
+/* Estilo para cada item de vídeo Short */
+.video-item-short {
+    width: 100%; 
+    max-width: 350px; 
+    position: relative;
+    padding-bottom: 177.77%; 
+    height: 0; 
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(163, 255, 0, 0.4);
+}
+
+.video-item-short iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* NOVO ESTILO PARA A IMAGEM NA LINHA */
+.video-item-image {
+    width: 100%;
+    max-width: 350px; /* Mesma largura máxima dos vídeos para consistência */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(163, 255, 0, 0.4); /* Mesmo brilho neon */
+}
+
+.video-item-image img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove espaços extras abaixo da imagem */
+    object-fit: cover; /* Garante que a imagem preencha o container sem distorcer */
+}
+
+
+.youtube-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* RESPONSIVIDADE (MOBILE FIRST) */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr; /* Um item por linha no mobile */
+    }
+    .video-item-short, .video-item-image {
+        max-width: 300px; /* Ajusta a largura máxima para mobile */
+        margin: 0 auto; /* Centraliza no mobile */
+    }
+}
+/* RESPONSIVIDADE (MOBILE FIRST) */
+@media (max-width: 768px) {
+    
+    /* Hero Section */
+    #hero h1 {
+        font-size: 3em; /* Reduz o tamanho do título no mobile */
+    }
+
+    #hero h2 {
+        font-size: 1.2em;
+        padding: 0 10px;
+    }
+
+    .cta-button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    /* Bloco de Cupom */
+    .coupon-code {
+        font-size: 2.5em; /* Reduz o tamanho do código do cupom */
+    }
+
+    /* Seção História */
+    .historia-content {
+        flex-direction: column; /* Empilha a imagem e o texto no mobile */
+        text-align: center;
+    }
+    
+    .historia-image {
+        order: -1; /* Coloca a imagem acima do texto no mobile */
+        margin-bottom: 30px;
+    }
+    
+    /* Seção Vídeos */
+    .video-grid {
+        /* Garante que os vídeos usem a largura total no mobile */
+        grid-template-columns: 1fr; 
+    }
 }
