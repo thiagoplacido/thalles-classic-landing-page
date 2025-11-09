@@ -28,3 +28,104 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center;
+    text-align: center;
+    min-height: 80vh; /* Ocupa 80% da altura da tela */
+    position: relative;
+    overflow: hidden; /* Para garantir que a imagem de fundo fique no lugar */
+}
+
+#hero h1 {
+    font-size: 4.5em; /* Título bem grande */
+    color: var(--primary-green);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    z-index: 1; /* Garante que o texto fique acima da imagem */
+}
+
+#hero h2 {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: var(--text-light);
+    z-index: 1;
+}
+
+/* Link do Instagram no topo */
+.instagram-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+.cta-button {
+    background-color: var(--primary-green);
+    color: var(--text-dark); /* Preto para contraste no botão verde */
+    padding: 15px 40px;
+    border-radius: 50px; /* Botão arredondado */
+    text-decoration: none;
+    font-weight: 900; /* Extra bold */
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-green); /* Defina no :root se quiser um tom mais escuro no hover */
+}
+/* SEÇÃO DE DESTAQUE/CUPOM */
+.highlight-section {
+    background-color: var(--primary-green); /* O bloco inteiro é verde néon */
+    padding: 50px 0;
+    text-align: center;
+    color: var(--text-dark); /* Tudo dentro é preto */
+    margin-bottom: 40px;
+}
+
+.coupon-block h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.coupon-code {
+    font-size: 4em;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin: 10px 0 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--text-dark); /* Fundo preto dentro do bloco verde */
+    color: var(--primary-green); /* Texto verde dentro do bloco preto */
+    border-radius: 5px;
+}
+
+.coupon-code span {
+    font-size: 0.4em;
+    display: block;
+    font-weight: 400;
+}
+
+.coupon-block p {
+    margin-top: 15px;
+}
+
+/* Botão Secundário - Pode ter um estilo diferente do principal */
+.coupon-cta-button {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.coupon-cta-button:hover {
+    background-color: #333;
+}
