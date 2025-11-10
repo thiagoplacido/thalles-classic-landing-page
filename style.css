@@ -109,11 +109,15 @@ body::before {
     z-index: 5;
 }
 
-#hero h1 {
-    font-size: 4.5em;
-    color: var(--primary-green);
-    text-transform: uppercase;
-    margin-bottom: 10px;
+.hero-logo {
+    max-width: 400px; /* Limita a largura máxima no desktop */
+    width: 100%; /* Garante que seja responsiva */
+    height: auto;
+    margin-bottom: 20px;
+    z-index: 10; /* Garante que fique acima do overlay e do vídeo */
+
+    /* Opcional: Efeito de Brilho Neon na logo */
+    filter: drop-shadow(0 0 8px rgba(163, 255, 0, 0.7)); 
 }
 
 /* ------------------- CTA BUTTONS ------------------- */
@@ -310,16 +314,29 @@ footer {
 .footer-links a, .autoria-link {
     color: var(--primary-green);
     text-decoration: none;
-    display: block;
     margin: 5px 0;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column; /* CRÍTICO: Empilha os itens (Logo, Links, Autoria) */
+    align-items: center; /* CRÍTICO: Centraliza os itens horizontalmente */
+    text-align: center; /* Garante que o texto interno (links, autoria) seja centralizado */
+    gap: 20px; /* Reduz a margem para um layout mais coeso */
+    /* Remova: justify-content: space-between; se ela estiver forçando o afastamento */
+}
+
+.footer-logo {
+    max-width: 150px; /* Tamanho razoável para a logo do rodapé */
+    height: auto;
+    margin-bottom: 10px; /* Adiciona espaço abaixo da logo */
 }
 
 
 /* ------------------- RESPONSIVIDADE (MOBILE FIRST) ------------------- */
 @media (max-width: 768px) {
     /* Hero Section */
-    #hero h1 {
-        font-size: 3em;
+    .hero-logo {
+        max-width: 80%; /* Ocupa a maior parte da largura no mobile */
     }
     #hero h2 {
         font-size: 1.2em;
