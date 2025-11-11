@@ -28,7 +28,7 @@ A solução foi construída como um \*\*Site Estático\*\* (HTML e CSS puro) par
 
 | \*\*Estética\*\* | Dark Mode, Neon Green (Vibrante) e Padrões Geométricos. |
 
-| \*\*Link Publicado\*\* | `\[ADICIONE A URL DO GITHUB PAGES AQUI]` |
+| \*\*Link Publicado\*\* | `https://thallesclassic.vercel.app/` |
 
 
 
